@@ -9,17 +9,3 @@ npm install
 npm run dev
 npm run build
 ```
-
-## Deploy Cloudflare Pages
-
-Build command:
-
-```bash
-npm run build
-```
-
-Output directory:
-
-```text
-dist
-```
