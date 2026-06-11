@@ -72,7 +72,7 @@ function writeLocalDocuments(documents) {
   try {
     localStorage.setItem(LOCAL_DOCUMENTS_KEY, JSON.stringify(sortDocuments(documents)));
   } catch {
-    // IndexedDB remains the primary store for large documents.
+    
   }
 }
 
@@ -132,7 +132,7 @@ export async function saveDocument(document) {
   try {
     await saveDocumentToIndexedDb(document);
   } catch {
-    // The local backup already holds the latest draft.
+    
   }
 
   return document;
@@ -144,7 +144,7 @@ export async function removeDocument(id) {
   try {
     await runStore("readwrite", (store) => store.delete(id));
   } catch {
-    // Keep delete effective in the local backup even if IndexedDB is unavailable.
+    
   }
 }
 

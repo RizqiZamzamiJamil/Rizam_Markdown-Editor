@@ -87,7 +87,7 @@ export const starterMarkdown = [
 ].join("\n");
 
 export const starterDocument = {
-  title: "Contoh Markdown Lengkap",
+  title: "Contoh Markdown",
   content: starterMarkdown,
 };
 
