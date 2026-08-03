@@ -12,7 +12,10 @@ function hashChart(chart) {
 export function MermaidChart({ chart }) {
   const [svg, setSvg] = useState("");
   const [error, setError] = useState("");
-  const chartId = useMemo(() => `rizam-md-mermaid-${hashChart(chart)}`, [chart]);
+  const chartId = useMemo(
+    () => `rizam-md-mermaid-${hashChart(chart)}`,
+    [chart],
+  );
 
   useEffect(() => {
     let cancelled = false;
@@ -28,16 +31,19 @@ export function MermaidChart({ chart }) {
           themeVariables: {
             background: "#0a0f1b",
             mainBkg: "#0a0f1b",
-            primaryColor: "#0b8fff",
+            primaryColor: "#027dfd",
             primaryTextColor: "#f7fbff",
-            primaryBorderColor: "#13d8ff",
-            lineColor: "#12b981",
+            primaryBorderColor: "#16d8f2",
+            lineColor: "#059669",
             secondaryColor: "#111827",
             tertiaryColor: "#05070d",
           },
         });
 
-        const rendered = await mermaid.render(`${chartId}-${Date.now()}`, chart);
+        const rendered = await mermaid.render(
+          `${chartId}-${Date.now()}`,
+          chart,
+        );
         if (!cancelled) {
           setSvg(rendered.svg);
           setError("");
@@ -45,7 +51,11 @@ export function MermaidChart({ chart }) {
       } catch (renderError) {
         if (!cancelled) {
           setSvg("");
-          setError(renderError instanceof Error ? renderError.message : "Invalid Mermaid chart");
+          setError(
+            renderError instanceof Error
+              ? renderError.message
+              : "Invalid Mermaid chart",
+          );
         }
       }
     }

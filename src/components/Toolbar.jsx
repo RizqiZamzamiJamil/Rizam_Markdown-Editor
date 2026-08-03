@@ -35,7 +35,7 @@ export function Toolbar({
   saveStatus,
 }) {
   return (
-    <div className="relative z-10 flex shrink-0 flex-wrap items-center justify-between gap-3 border-b border-white/10 bg-brand-panelSoft/70 px-3 py-3 backdrop-blur">
+    <div className="relative z-10 flex shrink-0 flex-wrap items-center justify-between gap-3 border-b border-white/10 bg-[#10151d] px-3 py-3">
       <div className="flex min-w-0 flex-wrap items-center gap-2">
         <div className="inline-flex rounded-lg border border-white/10 bg-white/[0.035] p-1">
           <IconButton
@@ -92,7 +92,9 @@ export function Toolbar({
             id="format-link"
             label="Link"
             icon={Link}
-            onClick={() => onInsertInline("[", "](https://rizam.fun)", "link text")}
+            onClick={() =>
+              onInsertInline("[", "](https://rizam.fun)", "link text")
+            }
           />
           <IconButton
             id="format-image"
@@ -134,7 +136,9 @@ export function Toolbar({
             id="format-code-block"
             label="Code block"
             icon={Braces}
-            onClick={() => onInsertBlock("```js\nconsole.log(\"Hello Rizam MD\");\n```\n")}
+            onClick={() =>
+              onInsertBlock('```js\nconsole.log("Hello Rizam MD");\n```\n')
+            }
           />
           <IconButton
             id="format-table"
@@ -175,10 +179,15 @@ export function Toolbar({
           icon={Sparkles}
           onClick={onFormat}
         />
-        <IconButton id="upload-document" label="Import" icon={Upload} onClick={onImportRequest} />
+        <IconButton
+          id="upload-document"
+          label="Import"
+          icon={Upload}
+          onClick={onImportRequest}
+        />
         <button
           aria-label="Download"
-          className="inline-flex h-9 items-center justify-center gap-2 rounded-lg border border-brand-cyan/45 bg-gradient-to-r from-brand-blue to-brand-cyan px-3 text-sm font-extrabold text-slate-950 transition hover:-translate-y-0.5 hover:shadow-cyan focus:outline-none focus:ring-2 focus:ring-brand-cyan/45"
+          className="inline-flex h-9 items-center justify-center gap-2 rounded-lg border border-brand-cyan bg-brand-cyan px-3 text-sm font-extrabold text-black transition hover:-translate-y-0.5 hover:bg-brand-blue hover:text-white focus:outline-none focus:ring-2 focus:ring-brand-cyan/45"
           onClick={onDownload}
           type="button"
         >

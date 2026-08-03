@@ -43,7 +43,7 @@ export function PreviewPane({ markdown }) {
             </article>
           </div>
 
-          <aside className="hidden min-h-0 overflow-hidden border-l border-white/10 bg-white/[0.025] p-4 xl:block">
+          <aside className="hidden min-h-0 overflow-hidden border-l border-white/10 bg-[#10151d] p-4 xl:block">
             <div className="flex h-full min-h-0 flex-col">
               <div className="mb-3 flex items-center gap-2 text-xs font-extrabold uppercase tracking-[0.14em] text-brand-cyan">
                 <BookOpenText className="h-4 w-4" aria-hidden="true" />
@@ -64,7 +64,9 @@ export function PreviewPane({ markdown }) {
                         event.preventDefault();
                         scrollToSection(item.id);
                       }}
-                      style={{ paddingLeft: `${(item.level - 1) * 0.75 + 0.5}rem` }}
+                      style={{
+                        paddingLeft: `${(item.level - 1) * 0.75 + 0.5}rem`,
+                      }}
                     >
                       {item.text}
                     </a>

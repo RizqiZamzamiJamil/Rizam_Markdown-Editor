@@ -6,7 +6,7 @@ export function DeleteDialog({ documentTitle, isOpen, onCancel, onConfirm }) {
   return (
     <div
       aria-modal="true"
-      className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/70 p-4 backdrop-blur"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
       role="dialog"
     >
       <div className="w-full max-w-md rounded-lg border border-white/10 bg-brand-panel p-5 shadow-panel">
@@ -15,9 +15,12 @@ export function DeleteDialog({ documentTitle, isOpen, onCancel, onConfirm }) {
             <AlertTriangle className="h-5 w-5" aria-hidden="true" />
           </span>
           <div className="min-w-0">
-            <h2 className="font-display text-lg font-bold text-white">Delete document</h2>
+            <h2 className="font-display text-lg font-bold text-white">
+              Delete document
+            </h2>
             <p className="mt-2 text-sm leading-6 text-slate-300">
-              {documentTitle || "Untitled document"} will be removed from this browser.
+              {documentTitle || "Untitled document"} will be removed from this
+              browser.
             </p>
           </div>
         </div>
